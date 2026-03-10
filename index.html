@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sribash Gallery</title>
+  <meta
+    name="description"
+    content="A personal photo gallery by Sribash."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <p class="eyebrow">Personal Photo Archive</p>
+      <h1>Sribash Gallery</h1>
+      <p class="hero__text">
+        A clean public gallery of moments captured by Sribash.
+      </p>
+
+      <div class="toolbar">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Search photos by title or caption..."
+          aria-label="Search photos"
+        />
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-head">
+      <div>
+        <h2>Photo Collection</h2>
+        <p id="photoCount">Loading photos...</p>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery" aria-live="polite"></section>
+
+    <section id="emptyState" class="empty hidden">
+      <h3>No photos found</h3>
+      <p>Try a different search term.</p>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="closeLightbox" aria-label="Close viewer">
+      &times;
+    </button>
+
+    <button class="lightbox__nav lightbox__nav--prev" id="prevBtn" aria-label="Previous image">
+      &#10094;
+    </button>
+
+    <div class="lightbox__content">
+      <img id="lightboxImage" src="" alt="" />
+      <div class="lightbox__meta">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxCaption"></p>
+      </div>
+    </div>
+
+    <button class="lightbox__nav lightbox__nav--next" id="nextBtn" aria-label="Next image">
+      &#10095;
+    </button>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Sribash Gallery</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

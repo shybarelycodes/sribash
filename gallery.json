@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Golden Hour",
+    "caption": "A calm evening shot with warm tones.",
+    "image": "gallery/logo.png"
+  },
+  {
+    "title": "City Lights",
+    "caption": "Night photography in the middle of downtown.",
+    "image": "images/photo2.jpg"
+  },
+  {
+    "title": "Quiet Road",
+    "caption": "A simple road scene with natural light.",
+    "image": "images/photo3.jpg"
+  }
+]
