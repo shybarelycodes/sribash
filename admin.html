@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sribash Gallery Admin</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container admin-page">
+    <section class="admin-card">
+      <h1>Gallery Admin</h1>
+      <p class="admin-subtext">Only Sribash can upload and delete photos.</p>
+
+      <div id="authSection">
+        <form id="loginForm" class="admin-form">
+          <label>
+            Email
+            <input id="email" type="email" required autocomplete="username" />
+          </label>
+
+          <label>
+            Password
+            <input id="password" type="password" required autocomplete="current-password" />
+          </label>
+
+          <button type="submit">Sign in</button>
+          <p id="loginStatus"></p>
+        </form>
+      </div>
+
+      <div id="adminSection" class="hidden">
+        <div class="admin-toolbar">
+          <p id="signedInText"></p>
+          <button id="logoutBtn" class="secondary-btn" type="button">Sign out</button>
+        </div>
+
+        <form id="uploadForm" class="admin-form">
+          <label>
+            Title
+            <input id="title" type="text" required maxlength="100" />
+          </label>
+
+          <label>
+            Caption
+            <textarea id="caption" rows="4" maxlength="300"></textarea>
+          </label>
+
+          <label>
+            Photo
+            <input id="photoFile" type="file" accept="image/*" required />
+          </label>
+
+          <button type="submit">Upload photo</button>
+        </form>
+
+        <div class="progress-wrap">
+          <progress id="uploadProgress" value="0" max="100"></progress>
+          <p id="statusText">Waiting for upload.</p>
+        </div>
+
+        <section class="admin-list-wrap">
+          <h2>Existing Photos</h2>
+          <div id="adminPhotoList" class="admin-photo-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
